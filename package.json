@@ -1,0 +1,32 @@
+{
+  "name": "discord-music-bot",
+  "version": "1.0.0",
+  "description": "music-bot-for-the-boys-2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "production": "NODE_ENV=production&&npm start",
+    "development": "set NODE_ENV=development&&npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sboonny/Discord-music-bot.git"
+  },
+  "author": "Sboonny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sboonny/Discord-music-bot/issues"
+  },
+  "homepage": "https://github.com/Sboonny/Discord-music-bot#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.7.0",
+    "@discordjs/voice": "^0.7.5",
+    "@distube/soundcloud": "^1.0.0",
+    "@distube/spotify": "^1.0.0",
+    "discord.js": "^13.3.1",
+    "distube": "^3.0.3",
+    "dotenv": "^10.0.0",
+    "libsodium-wrappers": "^0.7.9"
+  }
+}
