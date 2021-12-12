@@ -1,2 +1,2 @@
 # Discord-music-bot
- discord-music-bot-for-the-boys
+ discord-music-bot-for-my-servers
