@@ -19,6 +19,10 @@
     "url": "https://github.com/Sboonny/Discord-music-bot/issues"
   },
   "homepage": "https://github.com/Sboonny/Discord-music-bot#readme",
+  "engines": {
+    "node": "16.6.1",
+    "npm": "8.3.0"
+  },
   "dependencies": {
     "@discordjs/opus": "^0.7.0",
     "@discordjs/voice": "^0.7.5",

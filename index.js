@@ -7,8 +7,7 @@ const SpotifyPlugin = require('@distube/spotify')
 require("dotenv").config();
 
 const token =  process.env.DISCORD_TOKEN;
-const prefix = process.env.PREFIX;
-const owner = process.env.OWNER;
+const prefix = '^';
 
 const bot =  new Discord.Client({
 	intents: [
@@ -25,7 +24,7 @@ bot.distube = new DisTube.default(bot, {
 	emptyCooldown: 0,
 	leaveOnFinish: true,
 	leaveOnStop: true,
-	// plugins: [new SoundCloudPlugin(), new SpotifyPlugin()],
+	plugins: [new SoundCloudPlugin(), new SpotifyPlugin()],
 })
 
 
@@ -41,11 +40,7 @@ for(const file of commandFiles) {
 bot.once("ready", () => {
   console.log(`Logged in as ${bot.user.tag}!`);
 
-  // distube.on('error', (channel, error) => {
-	// 	console.error(error)
-	// 	channel.send(`An error encoutered: ${error.slice(0, 1979)}`)
-	// })
-  distube.on('error', (channel, error) => {
+  bot.distube.on('error', (channel, error) => {
     console.error(error)
     channel.send(`An error encouter: ${error.slice(0, 1979)}`)
   })
@@ -69,14 +64,14 @@ bot.on("messageCreate", message => {
   }
 });
 
-const status = queue =>
-	`Volume: \`${queue.volume}%\` | Filter: \`${queue.filters.join(', ')
-		|| 'Off'}\` | Loop: \`${
-		queue.repeatMode
-			? queue.repeatMode === 2
-				? 'All Queue'
-				: 'This Song'
-			: 'Off'
-	}\` | Autoplay: \`${queue.autoplay ? 'On' : 'Off'}\``
+// const status = queue =>
+// 	`Volume: \`${queue.volume}%\` | Filter: \`${queue.filters.join(', ')
+// 		|| 'Off'}\` | Loop: \`${
+// 		queue.repeatMode
+// 			? queue.repeatMode === 2
+// 				? 'All Queue'
+// 				: 'This Song'
+// 			: 'Off'
+// 	}\` | Autoplay: \`${queue.autoplay ? 'On' : 'Off'}\``
 
 bot.login(token);
