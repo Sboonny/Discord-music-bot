@@ -24,7 +24,6 @@ bot.distube = new DisTube.default(bot, {
 	emptyCooldown: 0,
 	leaveOnFinish: true,
 	leaveOnStop: true,
-	// plugins: [new SoundCloudPlugin(), new SpotifyPlugin()],
 })
 
 
