@@ -9,5 +9,4 @@ module.exports.run = async (bot, message, args) => {
 module.exports.config = {
 	name: 'resume',
   allases:[],
-	description: 'resuming the music!',
 };

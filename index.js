@@ -36,7 +36,7 @@ for(const file of commandFiles) {
   bot.commands.set(command.name, command)
 }
 
-bot.once("ready", () => {
+bot.on("ready", () => {
   console.log(`Logged in as ${bot.user.tag}!`);
 
   bot.distube.on('error', (channel, error) => {
@@ -47,13 +47,13 @@ bot.once("ready", () => {
 
 bot.on("messageCreate", message => {
 
-  if (message.author.bot) return;
-  if (message.content.indexOf(prefix.length) !== 0) return;
+  if (message.author.bot) return 'message is from a bot';
+  if (message.content.indexOf(prefix.length) !== 0) return `there is no prefex try to use ${prefix}`;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if(!bot.command.has(command)) return;
+  if(!bot.command.has(command)) return 'there is no command like this!';
   
   try {
     bot.command.get(command).execute(message, args)
