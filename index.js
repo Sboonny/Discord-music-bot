@@ -1,8 +1,8 @@
 const fs = require('fs')
 const Discord = require('discord.js')
 const DisTube = require('distube')
-const SoundCloudPlugin = require('@distube/soundcloud')
-const SpotifyPlugin = require('@distube/spotify')
+// const SoundCloudPlugin = require('@distube/soundcloud')
+// const SpotifyPlugin = require('@distube/spotify')
 
 require("dotenv").config();
 
